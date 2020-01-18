@@ -351,3 +351,17 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 0.3ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "products"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Seven Mobile Apps in Seven Weeks"], ["description", "<p>\n<em>Native Apps, Multiple Platforms</em>\nAnswer the question “Can we build this for ALL the devices?” with a\nresounding YES. This book will help you get there with a real-world\nintroduction to seven platforms, whether you’re new to mobile or an\nexperienced developer needing to expand your options. Plus, you’ll find\nout which cross-platform solution makes the most sense for your needs.\n</p>"], ["image_url", "7apps.jpg"], ["price", 26.0], ["created_at", "2020-01-18 18:38:20.682484"], ["updated_at", "2020-01-18 18:38:20.682484"]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/products" for ::1 at 2020-01-18 19:38:56 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 63ms (Views: 58.8ms | ActiveRecord: 0.4ms)
+
+
