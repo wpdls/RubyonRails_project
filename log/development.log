@@ -245,3 +245,109 @@ Migrating to CreateProducts (20200118182000)
   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-01-18 18:22:34.639991"], ["updated_at", "2020-01-18 18:22:34.639991"]]
   [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/products" for ::1 at 2020-01-18 19:24:51 +0100
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 364ms (Views: 345.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/products/new" for ::1 at 2020-01-18 19:25:11 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (79.2ms)
+  Rendered products/new.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 232ms (Views: 162.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/products" for ::1 at 2020-01-18 19:25:17 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TtMkhMG9DwbbNnRAsBq4J5POlIw6FAoBAKbRAkLg2yijBb1B+6D6vFyFJP1T6/GvgmZeZCzuycpVmZBWhBAIHQ==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", ""], ["description", ""], ["image_url", ""], ["created_at", "2020-01-18 18:25:17.088530"], ["updated_at", "2020-01-18 18:25:17.088530"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/1
+Completed 302 Found in 31ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/products/1" for ::1 at 2020-01-18 19:25:17 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (2.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 46ms (Views: 32.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/products" for ::1 at 2020-01-18 19:25:19 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 64ms (Views: 56.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/new" for ::1 at 2020-01-18 19:25:22 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (14.4ms)
+  Rendered products/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 71ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products/new" for ::1 at 2020-01-18 19:26:57 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (6.4ms)
+  Rendered products/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 59ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2020-01-18 19:27:39 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xbENIz3kCgkAGploG4cCAx+YUc84ieVcz1/KucCsQo+RkutayA+gLPdi6WVlIGp+ZIICaZnnrelNj7uP/ypjCQ==", "product"=>{"title"=>"Some App", "description"=>"There is some description", "image_url"=>"some url", "price"=>"5"}, "commit"=>"Create Product"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "products" ("title", "description", "image_url", "price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Some App"], ["description", "There is some description"], ["image_url", "some url"], ["price", 5.0], ["created_at", "2020-01-18 18:27:39.617934"], ["updated_at", "2020-01-18 18:27:39.617934"]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products/2
+Completed 302 Found in 11ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/products/2" for ::1 at 2020-01-18 19:27:39 +0100
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products" for ::1 at 2020-01-18 19:27:50 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 64ms (Views: 55.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/products/1" for ::1 at 2020-01-18 19:27:56 +0100
+Processing by ProductsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FJ6DUcwDFW/kM2UAKoH+0pJQ0B2H313rAYqSc22WUOpAvWUoOei/ShNLFQ1UJpav6UqDuyaxFV6DWuNFUhBxbA==", "id"=>"1"}
+  [1m[36mProduct Load (1.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/products
+Completed 302 Found in 15ms (ActiveRecord: 6.6ms)
+
+
+Started GET "/products" for ::1 at 2020-01-18 19:27:56 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
