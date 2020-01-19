@@ -729,3 +729,42 @@ Processing by ProductsController#create as HTML
 Completed 200 OK in 161ms (Views: 60.4ms | ActiveRecord: 1.5ms)
 
 
+Started GET "/products" for ::1 at 2020-01-19 18:22:19 +0100
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 18ms
+
+
+  
+ArgumentError (Range unspecified. Specify the :in, :within, :maximum, :minimum, or :is option.):
+  
+app/models/product.rb:4:in `<class:Product>'
+app/models/product.rb:1:in `<top (required)>'
+app/controllers/products_controller.rb:7:in `index'
+Started GET "/products" for ::1 at 2020-01-19 18:22:40 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  Rendered products/index.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 119ms (Views: 113.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/products/new" for ::1 at 2020-01-19 18:22:42 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (9.2ms)
+  Rendered products/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 73ms (Views: 67.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/products" for ::1 at 2020-01-19 18:22:43 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fTDlHMh8O2Wm3adAL0W+hPtQEvX7p+1D49ai90YYCamQ5nzZ8mHO3yFu9/3MtPcM6vjYHe1dLoi26eOjgOjanA==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "products" WHERE "products"."title" = ? LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (5.0ms)
+  Rendered products/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 63ms (Views: 42.5ms | ActiveRecord: 0.9ms)
+
+
