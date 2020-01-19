@@ -687,3 +687,33 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/products/new" for ::1 at 2020-01-19 17:46:43 +0100
+Processing by ProductsController#new as HTML
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (40.8ms)
+  Rendered products/new.html.erb within layouts/application (56.1ms)
+Completed 200 OK in 349ms (Views: 222.6ms | ActiveRecord: 13.3ms)
+
+
+Started POST "/products" for ::1 at 2020-01-19 17:46:46 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"m+WheuY5gdonagWT+sbJBh72An2u5k4mff+czvHyotd2Mzi/3CR0YKDZVS4ZN4COD17Ilbgcje0owN2aNwJx4g==", "product"=>{"title"=>"", "description"=>"", "image_url"=>"", "price"=>""}, "commit"=>"Create Product"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (17.2ms)
+  Rendered products/new.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 111ms (Views: 90.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/products" for ::1 at 2020-01-19 17:48:31 +0100
+Processing by ProductsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BWF6RH3aV+6s0mi0a5XMJqRSu3EP5lCXh26s9hvT5CVRQpw9iDH9y1uqGLkVMqRb30jo166IGCIFvt3AJFXFow==", "product"=>{"title"=>"Some App", "description"=>"Some description", "image_url"=>"", "price"=>"hello"}, "commit"=>"Create Product"}
+  [1m[35m (1.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (24.1ms)
+  Rendered products/new.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 415ms (Views: 277.4ms | ActiveRecord: 10.5ms)
+
+
