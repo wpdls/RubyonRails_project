@@ -768,3 +768,136 @@ Processing by ProductsController#create as HTML
 Completed 200 OK in 63ms (Views: 42.5ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/addressbook" for ::1 at 2020-01-19 18:37:32 +0100
+  
+AbstractController::ActionNotFound (The action 'addressbook' could not be found for AddressBookController):
+  
+actionpack (5.1.7) lib/abstract_controller/base.rb:119:in `process'
+actionview (5.1.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.7) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.7) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.1.1) lib/rack/etag.rb:27:in `call'
+rack (2.1.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.1) lib/rack/head.rb:14:in `call'
+rack (2.1.1) lib/rack/session/abstract/id.rb:277:in `context'
+rack (2.1.1) lib/rack/session/abstract/id.rb:271:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/addressbook" for ::1 at 2020-01-19 18:38:30 +0100
+Processing by AddressBookController#addressbook as HTML
+  Rendering address_book/addressbook.html.erb within layouts/application
+  Rendered address_book/addressbook.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 455ms (Views: 448.5ms)
+
+
+Started GET "/addressbook" for ::1 at 2020-01-19 18:38:52 +0100
+  
+ActionController::RoutingError (uninitialized constant AddressbookController):
+  
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.1.1) lib/rack/etag.rb:27:in `call'
+rack (2.1.1) lib/rack/conditional_get.rb:27:in `call'
+rack (2.1.1) lib/rack/head.rb:14:in `call'
+rack (2.1.1) lib/rack/session/abstract/id.rb:277:in `context'
+rack (2.1.1) lib/rack/session/abstract/id.rb:271:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.1.1) lib/rack/method_override.rb:24:in `call'
+rack (2.1.1) lib/rack/runtime.rb:24:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.1.1) lib/rack/sendfile.rb:113:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/addressbook" for ::1 at 2020-01-19 18:39:03 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/addressbook" for ::1 at 2020-01-19 18:39:42 +0100
+  
+ArgumentError (Missing :controller key on routes definition, please check your routes.):
+  
+config/routes.rb:7:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/addressbook" for ::1 at 2020-01-19 18:39:52 +0100
+Processing by AddressBookController#addressbook as HTML
+  Rendering address_book/addressbook.html.erb within layouts/application
+  Rendered address_book/addressbook.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 53ms (Views: 47.2ms)
+
+
