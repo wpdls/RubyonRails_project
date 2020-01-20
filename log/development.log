@@ -901,3 +901,89 @@ Processing by AddressBookController#addressbook as HTML
 Completed 200 OK in 53ms (Views: 47.2ms)
 
 
+Started GET "/" for ::1 at 2020-01-20 23:20:13 +0100
+  
+SyntaxError (/Users/jaynephillips/webdevelopment/RubyonRails_project/config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  root 'store#index', as 'store_index'
+                          ^):
+  
+config/routes.rb:4: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+Started GET "/" for ::1 at 2020-01-20 23:20:44 +0100
+  
+ArgumentError (Invalid route name, already in use: 'store_index' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2020-01-20 23:21:24 +0100
+  
+ArgumentError (Invalid route name, already in use: 'store_index' 
+You may have defined two routes with the same name using the `:as` option, or you may be overriding a route already defined by a resource with the same naming. For the latter, you can restrict the routes created with `resources` as explained here: 
+http://guides.rubyonrails.org/routing.html#restricting-the-routes-created):
+  
+config/routes.rb:4:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2020-01-20 23:21:46 +0100
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  Rendered store/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 209ms (Views: 197.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-20 23:26:28 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (83.0ms)
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 12.3ms)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+     5: <ul class="catalog">
+     6:     <% @products.each do |product| %>
+     7:         <li>
+     8:             <%= image_tag(product.image_url) %>
+     9:             <h2><%= product.title %></h2>
+    10:             <p>
+    11:                 <%= sanitize(product.description) %>
+  
+app/views/store/index.html.erb:8:in `block in _app_views_store_index_html_erb__3086657177979280711_70200300529120'
+app/views/store/index.html.erb:6:in `_app_views_store_index_html_erb__3086657177979280711_70200300529120'
+Started GET "/" for ::1 at 2020-01-20 23:26:46 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 273ms (Views: 268.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-01-20 23:32:57 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 245ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (The asset "logo.svg" is not present in the asset pipeline.):
+    11:   <body>
+    12: 
+    13:     <header class="main">
+    14:       <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+    15:       <h1><%= @page_title %></h1>
+    16:     </header>
+    17: 
+  
+app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb__2036422855833770642_70200284837400'
+Started GET "/" for ::1 at 2020-01-20 23:33:24 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 52ms (Views: 46.1ms | ActiveRecord: 0.2ms)
+
+
