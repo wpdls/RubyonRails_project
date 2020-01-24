@@ -2011,3 +2011,45 @@ Processing by CartsController#show as HTML
 Completed 200 OK in 44ms (Views: 39.3ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/carts/1" for ::1 at 2020-01-24 11:53:51 +0100
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (0.1ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Product Load (0.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered carts/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 48ms (Views: 44.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/carts/wibble" for ::1 at 2020-01-24 11:53:56 +0100
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"wibble"}
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Cart with 'id'=wibble):
+  
+app/controllers/carts_controller.rb:67:in `set_cart'
+Started GET "/carts/wibble" for ::1 at 2020-01-24 11:58:46 +0100
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"wibble"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+Attempt to access invalid cart wibble
+Redirected to http://localhost:3000/store/index
+Completed 302 Found in 21ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/store/index" for ::1 at 2020-01-24 11:58:46 +0100
+Processing by StoreController#index as HTML
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 61ms (Views: 54.3ms | ActiveRecord: 1.0ms)
+
+
