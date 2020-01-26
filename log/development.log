@@ -2260,3 +2260,18 @@ Processing by CartsController#show as HTML
 Completed 200 OK in 59ms (Views: 51.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/carts/3" for ::1 at 2020-01-26 20:33:44 +0100
+Processing by CartsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCart Load (5.8ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering carts/show.html.erb within layouts/application
+  [1m[36mLineItem Load (1.9ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 3]]
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (84.2ms)
+  Rendered carts/_cart.html.erb (194.0ms)
+  Rendered carts/show.html.erb within layouts/application (210.0ms)
+  Rendered collection of line_items/_line_item.html.erb [1 times] (0.7ms)
+  Rendered carts/_cart.html.erb (5.2ms)
+Completed 200 OK in 676ms (Views: 522.5ms | ActiveRecord: 18.8ms)
+
+
