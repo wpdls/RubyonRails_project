@@ -4599,3 +4599,115 @@ Started GET "/cable/" [WebSocket] for ::1 at 2020-01-28 13:32:02 +0100
 Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
 ProductsChannel is transmitting the subscription confirmation
 ProductsChannel is streaming from products
+Started GET "/users" for ::1 at 2020-01-28 13:48:34 +0100
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 263ms (Views: 247.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cable" for ::1 at 2020-01-28 13:48:35 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2020-01-28 13:48:35 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductsChannel is transmitting the subscription confirmation
+ProductsChannel is streaming from products
+Started GET "/users/new" for ::1 at 2020-01-28 13:48:40 +0100
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (6.2ms)
+  Rendered users/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 117ms (Views: 111.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-01-28 13:48:42 +0100
+Processing by StoreController#index as HTML
+  [1m[36mCart Load (2.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering store/index.html.erb within layouts/application
+  [1m[36mProduct Load (1.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."title" ASC[0m
+  Rendered store/index.html.erb within layouts/application (60.8ms)
+  [1m[36mLineItem Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 18], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 18]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (3.8ms)
+  Rendered carts/_cart.html.erb (24.5ms)
+Completed 200 OK in 243ms (Views: 175.5ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/line_items?product_id=1" for ::1 at 2020-01-28 13:48:44 +0100
+Processing by LineItemsController#create as JS
+  Parameters: {"authenticity_token"=>"D1hcj1c78HnHbyrSX0ARgo+txKi41+E+OsIkQSgdEoqy39DYpk9sGHRae13px8xypaVh9TDZcj1GiN/345e1XA==", "product_id"=>"1"}
+  [1m[36mCart Load (0.1ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT  "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ? AND "line_items"."product_id" = ? LIMIT ?[0m  [["cart_id", 18], ["product_id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "line_items" SET "quantity" = ?, "updated_at" = ? WHERE "line_items"."id" = ?[0m  [["quantity", 2], ["updated_at", "2020-01-28 12:48:44.115333"], ["id", 20]]
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering line_items/create.js.coffee
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 18]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (2.0ms)
+  Rendered carts/_cart.html.erb (7.5ms)
+  Rendered line_items/create.js.coffee (607.9ms)
+Completed 200 OK in 639ms (Views: 623.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/orders/new" for ::1 at 2020-01-28 13:48:45 +0100
+Processing by OrdersController#new as HTML
+  [1m[36mCart Load (0.2ms)[0m  [1m[34mSELECT  "carts".* FROM "carts" WHERE "carts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mLineItem Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 18], ["LIMIT", 1]]
+  Rendering orders/new.html.erb within layouts/application
+  Rendered orders/_form.html.erb (9.1ms)
+  Rendered orders/new.html.erb within layouts/application (26.4ms)
+  [1m[36mCACHE LineItem Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "line_items" WHERE "line_items"."cart_id" = ? LIMIT ?[0m  [["cart_id", 18], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."cart_id" = ?[0m  [["cart_id", 18]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of line_items/_line_item.html.erb [1 times] (3.0ms)
+  Rendered carts/_cart.html.erb (8.8ms)
+Completed 200 OK in 113ms (Views: 87.0ms | ActiveRecord: 1.8ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-01-28 13:48:46 +0100
+ProductsChannel stopped streaming from products
+Started GET "/cable" for ::1 at 2020-01-28 13:48:46 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2020-01-28 13:48:46 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductsChannel is transmitting the subscription confirmation
+ProductsChannel is streaming from products
+Started GET "/login" for ::1 at 2020-01-28 13:48:58 +0100
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 114ms (Views: 106.5ms | ActiveRecord: 0.0ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-01-28 13:48:58 +0100
+ProductsChannel stopped streaming from products
+Started GET "/cable" for ::1 at 2020-01-28 13:48:58 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2020-01-28 13:48:58 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductsChannel is transmitting the subscription confirmation
+ProductsChannel is streaming from products
+Started POST "/login" for ::1 at 2020-01-28 13:49:06 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Y6QVpQTMT0csMFYBiNHNNc5pHUG5CPY25o0TZDl70mJrXYvYfibGOvIsVV4hC9JrCP306eKa21ZSkV7r2POzw==", "name"=>"Jayne", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."name" = ? LIMIT ?[0m  [["name", "Jayne"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 281ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/admin" for ::1 at 2020-01-28 13:49:07 +0100
+Processing by AdminController#index as HTML
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "orders"[0m
+  Rendering admin/index.html.erb within layouts/application
+  Rendered admin/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 103ms (Views: 95.7ms | ActiveRecord: 0.2ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-01-28 13:49:07 +0100
+ProductsChannel stopped streaming from products
+Started GET "/cable" for ::1 at 2020-01-28 13:49:07 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2020-01-28 13:49:07 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductsChannel is transmitting the subscription confirmation
+ProductsChannel is streaming from products
