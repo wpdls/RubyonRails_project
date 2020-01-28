@@ -5301,3 +5301,54 @@ Processing by OrdersController#index as HTML
 Completed 200 OK in 84ms (Views: 76.5ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/orders" for ::1 at 2020-01-28 15:07:21 +0100
+Processing by OrdersController#index as HTML
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders"[0m
+  Rendered orders/index.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 161ms (Views: 144.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/cable" for ::1 at 2020-01-28 15:07:22 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2020-01-28 15:07:22 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductsChannel is transmitting the subscription confirmation
+ProductsChannel is streaming from products
+Started GET "/users" for ::1 at 2020-01-28 15:07:24 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 75ms (Views: 51.5ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/users/1" for ::1 at 2020-01-28 15:07:28 +0100
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LoU2HCFU4Rjkcw633luDYUwOFqcmyfWkKOaFtB4m5/16ptBl1L9LPRMLfrqg/OscNxRFAYenvRGqNvSCIaDGew==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (1.4ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for ::1 at 2020-01-28 15:07:28 +0100
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."name" ASC[0m
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 56ms (Views: 51.4ms | ActiveRecord: 0.6ms)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-01-28 15:07:28 +0100
+ProductsChannel stopped streaming from products
+Started GET "/cable" for ::1 at 2020-01-28 15:07:28 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2020-01-28 15:07:28 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ProductsChannel is transmitting the subscription confirmation
+ProductsChannel is streaming from products
