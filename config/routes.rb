@@ -7,16 +7,14 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
-  get 'admin/index'
-
-  resources :users
-  resources :orders
-  resources :line_items
-  resources :carts
-  # get 'store/index'
+  scope '(:locale)' do # the () means its optional
+    resources :orders
+    resources :line_items
+    resources :carts
+    root 'store#index', as: 'store_index', via: :all
+  end
   
-  root 'store#index', as: 'store_index'
-
+  resources :users
   resources :products do
     get :who_bought, on: :member
   end
